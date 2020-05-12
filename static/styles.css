@@ -1,63 +1,68 @@
+html,
+body {
+    min-height: 100%;
+}
 
-        html,
-        body {
-            min-height: 100%;
-        }
+body,
+div,
+form,
+input,
+p {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 14px;
+    color: #666;
+    line-height: 22px;
+}
 
-        body,
-        div,
-        form,
-        input,
-        p {
-            padding: 0;
-            margin: 0;
-            outline: none;
-            font-family: Roboto, Arial, sans-serif;
-            font-size: 14px;
-            color: #666;
-            line-height: 22px;
-        }
+h1 {
+    font-weight: 400;
+    text-align: center;
+}
 
-        h1 {
-            font-weight: 400;
-        }
-        .testbox {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: inherit;
-            padding: 3px;
-            }
-        form {
-           
-            padding: 20px;
-            background: #fff;
-            box-shadow: 0 2px 5px #ccc;
-            margin: auto;
-            max-width: 700px;
-               
-        }
+.testbox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: inherit;
+    padding: 3px;
+}
 
-        input {
-            width: calc(100% - 10px);
-            padding: 5px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-            vertical-align: middle;
-        }
+form {
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 2px 5px #ccc;
+    margin: auto;
+    max-width: 700px;
+}
 
-        input:hover,
-        
+input {
+    width: calc(100% - 10px);
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    vertical-align: middle;
+}
 
-        .btn-block {
-            margin-top: 20px;
-            text-align: center;
-            max-width: 100px;
-            margin: auto;
-        }
+input:hover,
+textarea:hover {
+    outline: none;
+    border: 1px solid #095484;
+}
 
-       
-        button:hover {
-            background-color: #0666a3;
-        }
-        
+textarea {
+    width: calc(100% - 6px);
+}
+
+.btn-block {
+    margin-top: 20px;
+    text-align: center;
+    max-width: 100px;
+    margin: auto;
+}
+
+.heading {
+    text-align: center;
+}

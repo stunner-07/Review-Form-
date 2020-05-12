@@ -3,37 +3,30 @@
 
 <head>
     <title>Review Form</title>
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet'
-        type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles.css')}}">
-
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='styles2.css')}}">
 </head>
 
 <body>
-    <div class="testbox">
+    <div class="testbox box">
 
         <form action=# method=post>
             {{ form.hidden_tag() }}
             <fieldset>
                 <h1>Review Form</h1>
-                <p>Please take a few minutes to give us Review about our Product by filling in this short
-                    ReviewForm.</p>
-                <p> We are
-                    conducting this research in order to measure your level of satisfaction with the quality of our
-                    Product.</p>
+                <br>
+                <p>Please take a few minutes to give us Review about our Product by filling in this short ReviewForm.
+                </p>
+                <p> We are conducting this research in order to measure your level of satisfaction with the quality of our Product.
+                </p>
                 We thank you for your participation.
-                <hr />
-                {{ form.name.label }}<br>
-                {{ form.name }}
+                <hr /> {{ form.name.label }}<br> {{ form.name }}
+                <br><br> {{ form.productName.label }}<br> {{ form.productName }}
+                <br><br> {{form.review.label}}
+                <br> {{form.review(rows='5',cols='83')}}
                 <br>
-                {{ form.productName.label }}<br>
-                {{ form.productName }}
-                <br>
-
-                {{form.review.label}}
-                <br>
-                {{form.review(rows='5',cols='83')}}<br>
                 <br>
                 <div class="btn-block">
                     {{form.submit}}
@@ -45,19 +38,25 @@
         </form>
 
     </div>
-    <div> <br>
+    <div class="heading">
+        <h1>Customer Review</h1>
+        <br><br>
+    </div>
 
-        {% for review in reviews %}
-        <h2>
-            {{ review.Name }}
-        </h2>
-        <p>
-            {{ review.Product }}
-        </p>
-        <p>
-            {{ review.Review }}
-        </p>
-        {% endfor %}
+    <div>
+        <table class="tablee table table-bordered">
+            <th class="thead-dark">Customer Name</th>
+            <th class="thead-dark">Product Name</th>
+            <th class="thead-dark">Review</th>
+
+            {% for review in reviews %}
+            <tr>
+                <td class="thead-light">{{ review.Name }}</td>
+                <td class="thead-light">{{ review.Product }}</td>
+                <td class="thead-light">{{ review.Review }}</td>
+            </tr>
+            {% endfor %}
+        </table>
     </div>
 </body>
 
